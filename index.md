@@ -1,5 +1,6 @@
-Here you can say lots of fun things about your site.
+I'm not writing a bio for this. 
+This blog is strictly to share things I've built or learned.
 
-Maybe say a some things about yourself.
+You found this page. You can probably figure other stuff out about me if you want.
 
-Or maybe what you plan to blog about.
+Views are my own.
