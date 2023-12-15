@@ -3,6 +3,11 @@ div {
   color: #d8c7b0;
 }
 
+main {
+  background: #ffecd0;
+  color: #d8c7b0;
+}
+
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
