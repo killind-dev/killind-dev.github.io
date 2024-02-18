@@ -1,8 +1,3 @@
-body {
-  background-color: #ffecd0;
-  color: #5b3917;
-}
-
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -47,4 +42,27 @@ hr {
   transform: translateY(-50%);
   font-size: 2.5em;
   opacity: 0.3;
+}
+
+.footnotes,
+.references {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.footnotes h2,
+.references h2 {
+  margin-bottom: 10px;
+}
+
+.footnotes ol,
+.references ol {
+  list-style: decimal inside;
+}
+
+.footnotes li,
+.references li {
+  margin-bottom: 10px;
+  padding-left: 10px;
 }

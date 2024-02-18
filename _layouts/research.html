@@ -1,0 +1,58 @@
+---
+layout: research
+---
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+<div class="container">
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        {% for section in page.sections %}
+          <li><a href="#section-{{ forloop.index }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+
+  <article class="research-content">
+    <header class="research-header">
+      <h1>{{ page.title }}</h1>
+      <div class="authors">
+        {% for author in page.authors %}
+          <span>{{ author }}</span>
+        {% endfor %}
+      </div>
+      <div class="affiliations">{{ page.affiliations }}</div>
+      <time datetime="{{ page.date }}">{{ page.date | date: '%B %d, %Y' }}</time>
+    </header>
+
+    <div class="grid-layout">
+      {% for section in page.sections %}
+        <div class="section-card" id="section-{{ forloop.index }}">
+          <img src="{{ section.image }}" alt="{{ section.title | escape }}" />
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.summary }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Footnotes Section -->
+    <section class="footnotes">
+      <h2>Footnotes</h2>
+      <ol>
+        {% for footnote in page.footnotes %}
+          <li id="fn:{{ footnote.id }}">{{ footnote.text }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <!-- References Section -->
+    <section class="references">
+      <h2>References</h2>
+      <ol>
+        {% for reference in page.references %}
+          <li id="ref:{{ reference.id }}">{{ reference.text }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+  </article>
+</div>
