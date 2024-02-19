@@ -1,0 +1,13 @@
+---
+layout: default
+title: Work
+---
+<h1></h1>
+
+<ul style="list-style-type: none; padding: 0; margin: 0; padding-left: 0; margin-left: 0;">
+  {% for article in site.research-articles %}
+    <li>
+      <p><a href="{{article.url}}">{{ article.title }}</a></p>
+    </li>
+  {% endfor %}
+</ul>

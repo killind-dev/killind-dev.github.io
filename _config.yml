@@ -1,0 +1,24 @@
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  research-articles:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "research-articles"
+    values:
+      layout: "research"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

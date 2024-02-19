@@ -1,0 +1,12 @@
+---
+layout: default
+title: Blog
+---
+<p>Books I own</p>
+
+<ul style="list-style-type: none; padding: 0; margin: 0; padding-left: 0; margin-left: 0;">
+  {% for book in site.data.bookshelf %}
+    <li>
+      <p>{{ book.author }} - {{ book.name }}</p>
+  {% endfor %}
+</ul>

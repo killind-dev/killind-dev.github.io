@@ -1,0 +1,66 @@
+---
+layout: base
+name: research
+---
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        {% for section in page.sections %}
+          <li><a href='#{{ section.title | replace: " ", "-" | downcase }}'>{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+
+  <article class="research-content">
+    <h1>{{ page.title }}</h1>
+    <div class="grid-layout">
+      {% for section in page.sections %}
+        {% if section.top == true %}
+          <div class="section-card">
+            <a href='#{{ section.title | replace: " ", "-" | downcase }}'>
+              {% if section.image %}
+                  <img src="{{ section.image }}" alt="{{ section.title | escape }}"/>
+              {% endif %}
+              <h2>{{ section.title }}</h2>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <header class="research-header" style="text-align: right;">
+      <div class="authors">
+        {% for author in page.authors %}
+          <span>{{ author }}</span>
+        {% endfor %}
+      </div>
+      <div>
+        <div class="affiliations">{{ page.affiliations }}</div>
+        <time datetime="{{ page.date }}">{{ page.date | date: '%B %d, %Y' }}</time>
+      </div>
+    </header>
+    
+    {{ content }}
+    
+    <!-- Footnotes Section -->
+    <section class="footnotes">
+      <h2>Footnotes</h2>
+      <ol>
+        {% for footnote in page.footnotes %}
+          <li id="fn:{{ footnote.id }}">{{ footnote.text }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <!-- References Section -->
+    <section class="references">
+      <h2>References</h2>
+      <ol>
+        {% for reference in page.references %}
+          <li id="ref:{{ reference.id }}">{{ reference.text }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+  </article>

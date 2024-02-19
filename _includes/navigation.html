@@ -1,0 +1,14 @@
+<aside class="sidebar">
+    <!-- Sidebar content here -->
+    <nav class="sidebar-nav">
+    <ul style="list-style-type: none; padding: 0; margin: 0; text-align: right">
+    {% for item in site.data.navigation %}
+        <li>
+            <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+            {{ item.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>
+</aside>
